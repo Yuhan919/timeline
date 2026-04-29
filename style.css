@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  background: radial-gradient(circle at top left, #f5efe6, #ffffff 60%);
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 120px;
+  position: relative;
+}
+
+/* vertical timeline line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, #c7b9a5, transparent);
+  transform: translateX(-50%);
+}
+
+/* EVENTS */
+.event {
+  width: 50%;
+  padding: 20px 30px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* alternate left/right rhythm */
+.event:nth-child(odd) {
+  align-self: flex-start;
+  text-align: right;
+}
+
+.event:nth-child(even) {
+  align-self: flex-end;
+  text-align: left;
+}
+
+/* node dot */
+.event::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  background: #c7b9a5;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.event:nth-child(odd)::before {
+  right: -5px;
+}
+
+.event:nth-child(even)::before {
+  left: -5px;
+}
+
+/* hover effect = organic expansion */
+.event:hover {
+  transform: scale(1.03);
+}
+
+.event:hover::before {
+  transform: scale(1.8);
+  background: #8b6f47;
+}
+
+/* text */
+.event h2 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.event p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+/* links */
+.event a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* highlight (Art Nouveau center) */
+.highlight {
+  background: linear-gradient(to right, transparent, #f2e6d9, transparent);
+  border-radius: 10px;
+}
+
+/* CONTENT PAGES */
+.content {
+  padding: 80px 20%;
+  line-height: 1.7;
+}
+
+.content h1 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+
+
+.image-placeholder {
+  text-align: center;
+}
+
+.image-placeholder img {
+  width: 30%;
+  max-width: 220px;
+  margin: 30px auto 10px auto;
+}
+
+.caption {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* back link */
+.content a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #8b6f47;
+}
